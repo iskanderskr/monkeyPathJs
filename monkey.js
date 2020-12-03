@@ -2,6 +2,10 @@ const xlsx = require('node-xlsx')
 
 const matriz = xlsx.parse('./input.xlsx')[0].data
 
+Array.prototype.flat = function(){
+    return this.reduce((acc, val) => acc.concat(val), []);
+}
+
 const getBetterPathFromRow = (matriz, row)=>{
 
     let j = 0
